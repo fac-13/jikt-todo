@@ -7,18 +7,24 @@
     var addTodoForm = document.getElementById('add-todo');
   
     var state = [
-      { id: -3, description: 'first todo' },
-      { id: -2, description: 'second todo' },
-      { id: -1, description: 'third todo' },
+      { id: -3, description: 'first todo', done: false },
+      { id: -2, description: 'second todo', done: false },
+      { id: -1, description: 'third todo', done: false },
     ]; // this is our initial todoList
   
     // This function takes a todo, it returns the DOM node representing that todo
     var createTodoNode = function(todo) {
       var todoNode = document.createElement('li');
       // you will need to use addEventListener
-    
+
+  
       // add span holding description
-        
+      var liContent = document.createElement('div');
+      var para = document.createElement('p');
+      var text = document.createTextNode(todo.description);
+      para.appendChild(text);
+      liContent.appendChild(para);
+      todoNode.appendChild(liContent);
 
       // this adds the delete button
       var deleteButtonNode = document.createElement('button');
@@ -26,13 +32,27 @@
         var newState = todoFunctions.deleteTodo(state, todo.id);
         console.log(todo.id);
         update(newState);
+        console.log(newState);
       });
       todoNode.appendChild(deleteButtonNode);
+      
   
       // add markTodo button
-  
+      var markButtonNode = document.createElement('button');
+      markButtonNode.addEventListener('click', function(event) {
+        var newState = todoFunctions.markTodo(state, todo.id);
+        update(newState);
+        console.log(newState);
+      });
+      todoNode.appendChild(markButtonNode);
+
       // add classes for css
-  
+      todoNode.setAttribute("class", "item")
+      liContent.setAttribute("class", "item__content")
+      para.setAttribute("class", "content__p")
+      deleteButtonNode.setAttribute("class", "button__delete")
+      markButtonNode.setAttribute("class", "button__mark")
+
       return todoNode;
     };
   
@@ -45,7 +65,7 @@
         event.preventDefault();
         var description = event.target.description.value; // event.target ....
         var itemToAdd={done: false};
-        itemToAdd.item = description;
+        itemToAdd.description = description;
 
         // hint: todoFunctions.addTodo
         var newState = todoFunctions.addTodo(state, itemToAdd); // ?? change this!
