@@ -16,14 +16,15 @@
     var createTodoNode = function(todo) {
       var todoNode = document.createElement('li');
       // you will need to use addEventListener
+
   
       // add span holding description
-      var listItem = document.createElement('div');
+      var liContent = document.createElement('div');
       var para = document.createElement('p');
       var text = document.createTextNode(todo.description);
       para.appendChild(text);
-      listItem.appendChild(para);
-      todoNode.appendChild(listItem);
+      liContent.appendChild(para);
+      todoNode.appendChild(liContent);
 
       // this adds the delete button
       var deleteButtonNode = document.createElement('button');
@@ -43,8 +44,14 @@
         console.log(newState);
       });
       todoNode.appendChild(markButtonNode);
+
       // add classes for css
-  
+      todoNode.setAttribute("class", "item")
+      liContent.setAttribute("class", "item__content")
+      para.setAttribute("class", "content__p")
+      deleteButtonNode.setAttribute("class", "button__delete")
+      markButtonNode.setAttribute("class", "button__mark")
+
       return todoNode;
     };
   
