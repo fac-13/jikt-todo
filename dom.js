@@ -7,9 +7,9 @@
     var addTodoForm = document.getElementById('add-todo');
   
     var state = [
-      { id: -3, description: 'first todo' },
-      { id: -2, description: 'second todo' },
-      { id: -1, description: 'third todo' },
+      { id: -3, description: 'first todo', done: false },
+      { id: -2, description: 'second todo', done: false },
+      { id: -1, description: 'third todo', done: false },
     ]; // this is our initial todoList
   
     // This function takes a todo, it returns the DOM node representing that todo
@@ -30,11 +30,19 @@
       deleteButtonNode.addEventListener('click', function(event) {
         var newState = todoFunctions.deleteTodo(state, todo.id);
         update(newState);
+        console.log(newState);
       });
       todoNode.appendChild(deleteButtonNode);
+      
   
       // add markTodo button
-  
+      var markButtonNode = document.createElement('button');
+      markButtonNode.addEventListener('click', function(event) {
+        var newState = todoFunctions.markTodo(state, todo.id);
+        update(newState);
+        console.log(newState);
+      });
+      todoNode.appendChild(markButtonNode);
       // add classes for css
   
       return todoNode;
