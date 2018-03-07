@@ -30,6 +30,7 @@
       var deleteButtonNode = document.createElement('button');
       deleteButtonNode.addEventListener('click', function(event) {
         var newState = todoFunctions.deleteTodo(state, todo.id);
+        console.log(todo.id);
         update(newState);
         console.log(newState);
       });
@@ -61,11 +62,13 @@
         // https://developer.mozilla.org/en-US/docs/Web/Events/submit
         // what does event.preventDefault do?
         // what is inside event.target?
-  
-        var description = '?'; // event.target ....
-  
+        event.preventDefault();
+        var description = event.target.description.value; // event.target ....
+        var itemToAdd={done: false};
+        itemToAdd.description = description;
+
         // hint: todoFunctions.addTodo
-        var newState = []; // ?? change this!
+        var newState = todoFunctions.addTodo(state, itemToAdd); // ?? change this!
         update(newState);
       });
     }
