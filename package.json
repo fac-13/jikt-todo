@@ -1,0 +1,23 @@
+{
+  "name": "jikt-todo",
+  "version": "1.0.0",
+  "description": "todolist",
+  "main": "dom.js",
+  "scripts": {
+    "test": "tape test.js | tap-spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fac-13/jikt-todo.git"
+  },
+  "author": "jikt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fac-13/jikt-todo/issues"
+  },
+  "homepage": "https://github.com/fac-13/jikt-todo#readme",
+  "devDependencies": {
+    "tap-spec": "^4.1.1",
+    "tape": "^4.9.0"
+  }
+}
