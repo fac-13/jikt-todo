@@ -66,8 +66,8 @@ var todoFunctions = {
       return item2.id-item1.id;
     },
     sortAZ: function(item1, item2){
-      if(item1.description < item2.description) return -1;
-      if(item1.description > item2.description) return 1;
+      if(item1.description < item2.description) return 1;
+      if(item1.description > item2.description) return -1
       return 0;
     },
     
