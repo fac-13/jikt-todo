@@ -62,11 +62,23 @@ var todoFunctions = {
      return toggledArray;
 
     },
+    sortDescending: function(item1, item2){
+      return item2.id-item1.id;
+    },
+    sortAZ: function(item1, item2){
+      if(item1.description < item2.description) return -1;
+      if(item1.description > item2.description) return 1;
+      return 0;
+    },
+    
     sortTodos: function(todos, sortFunction) {
       // stretch goal! Do this last
       // should leave the input arguement todos unchanged (you can use cloneArrayOfObjects)
       // sortFunction will have same signature as the sort function in array.sort
       // hint: array.slice, array.sort
+      let localTodos = this.cloneArrayOfObjects(todos);
+      let sortedTodos = localTodos.sort(sortFunction);
+      return sortedTodos;
     },
   };
 
