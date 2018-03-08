@@ -70,14 +70,22 @@ body{
 }
 .input-form__button{
   color: white;
-  background: rgba(0, 255, 0, 0.3);
+  background: #200f3d;
   border: none;
   font-size: 1.5rem;
   padding: 10px 20px;
   margin: 5px 0;
   border-radius: 5px;
   outline: none;
-
+}
+.input-form__button:hover{
+  box-shadow: 0 0 10px #fff;
+}
+.input-form__button:focus{
+  box-shadow: 0 0 10px #fff;
+}
+.input-form__button:active{
+  transform:scale(1.02);
 }
 .done{
   color: rgba(255,255,255,.3);
@@ -119,10 +127,7 @@ ul, li{
   padding:0 15px;
 }
 
-.buttons-container{
-  display: flex;
-  max-width: 20%;
-}
+
 /* items styling */
 
 /* div inside li that contains p */
@@ -140,10 +145,16 @@ ul, li{
  display: block;
  max-width: 80%;
  overflow: wrap;
- font-size: 2rem;
+ font-size: 1.2rem;
 }
 
 /* BUTTONS inside div*/
+
+.buttons-container{
+  display: flex;
+  max-width: 50%;
+  min-width: 20%;
+}
 button{
   width: 3em;
   height: 3em;
@@ -160,12 +171,9 @@ button:hover{
 }
 
 /* delete button styling */
-
 .button__delete{
   color:#f4429e;
   font-weight: bold;
   background-color:#fff;
   padding: 0;
-  display: block;
-  box-sizing: border-box;
 }
