@@ -127,7 +127,9 @@ ul, li{
   padding:0 15px;
 }
 
-
+.todo-item:hover{
+  box-shadow: 0 0 10px white;
+}
 /* items styling */
 
 /* div inside li that contains p */
