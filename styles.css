@@ -51,6 +51,7 @@ body{
   padding-right: 400px;
   opacity: 30%;
   font-size: 200%;
+  border-radius: 5px;
 }
 .input-form__button{
   color: white;

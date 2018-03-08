@@ -53,8 +53,8 @@
       buttonsContainer.appendChild(markButtonNode);
 
       // add classes for css
-      todoNode.setAttribute("class", "item")
-      liContent.setAttribute("class", "item__content")
+      todoNode.setAttribute("class", "todo-item")
+      liContent.setAttribute("class", "todo-item__content")
       para.setAttribute("class", "content__p")
       deleteButtonNode.setAttribute("class", "button__delete")
       markButtonNode.setAttribute("class", "button__mark")
