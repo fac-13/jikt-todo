@@ -75,7 +75,9 @@ body{
   padding: 10px 20px;
   border-radius: 5px;
   outline: none;
+  margin: 10px 10px;
 }
+
 .input-form__button:hover{
   box-shadow: 0 0 10px #fff;
 }
