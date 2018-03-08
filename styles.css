@@ -34,7 +34,6 @@ body{
   display:flex;
   flex-direction: column;
   font-size: 1rem;
-  border: 1px solid white;
   border-radius: 10px;
   padding: 30px;
   width: 100%;
@@ -127,7 +126,6 @@ ul, li{
   padding:0 15px;
 }
 
-
 /* items styling */
 
 /* div inside li that contains p */
@@ -179,10 +177,8 @@ button:focus{
 
 /* delete button styling */
 .button__delete{
-  /* color:#f4429e; */
   background-color: transparent;
   color:white;
   font-weight: bold;
-  /* background-color:#fff; */
   padding: 0;
 }
