@@ -34,7 +34,7 @@
         update(newState);
         console.log(newState);
       });
-      todoNode.appendChild(deleteButtonNode);
+      liContent.appendChild(deleteButtonNode);
 
 
       // add markTodo button
@@ -44,7 +44,7 @@
         update(newState);
         console.log(newState);
       });
-      todoNode.appendChild(markButtonNode);
+      liContent.appendChild(markButtonNode);
 
       // add classes for css
       todoNode.setAttribute("class", "item")
@@ -84,7 +84,7 @@
     // you do not need to change this function
     var renderState = function(state) {
       var todoListNode = document.createElement('ul');
-
+      todoListNode.setAttribute("class", "todos-list")
       state.forEach(function(todo) {
         todoListNode.appendChild(createTodoNode(todo));
       });
