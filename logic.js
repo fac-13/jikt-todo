@@ -65,6 +65,9 @@ var todoFunctions = {
     sortDescending: function(item1, item2){
       return item2.id-item1.id;
     },
+    sortAscending: function(item1, item2){
+      return item1.id-item2.id;
+    },
     sortAZ: function(item1, item2){
       if(item1.description < item2.description) return 1;
       if(item1.description > item2.description) return -1
@@ -73,6 +76,11 @@ var todoFunctions = {
     sortZA: function(item1, item2){
       if(item1.description < item2.description) return -1;
       if(item1.description > item2.description) return 1
+      return 0;
+    },
+    sortDone: function(item1, item2){
+      if(item1.done === item2.done) return -1;
+      if(item1.done !== item2.done) return 1
       return 0;
     },
     
