@@ -154,6 +154,8 @@ ul, li{
   display: flex;
   max-width: 50%;
   min-width: 20%;
+  display: flex;
+  justify-content: space-between;
 }
 button{
   width: 3em;
@@ -163,6 +165,9 @@ button{
   outline:none;
 }
 button:hover{
+  box-shadow: 0 0 10px white;
+}
+button:focus{
   box-shadow: 0 0 10px white;
 }
 /* markTodo button styling */
