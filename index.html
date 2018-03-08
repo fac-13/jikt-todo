@@ -6,16 +6,22 @@
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
-    <div class="container">
-      <form class="input-form" id="add-todo">
-        <input class="input-form__text" type="text" name="description" value="">
-        <input class="input-form__button" type="submit" name="" value="Submit">
-      </form>
-      <div id = "todo-container">
-          <ul class="todos-list">
-          </ul>
+    <div class="maincontainer">
+      <div class="formcontainer">
+        <form class="input-form" id="add-todo">
+          <input class="input-form__text" type="text" name="description" value="">
+          <input class="input-form__button" type="submit" name="" value="Submit">
+          <span id="validateSpan"> Please fill in this field </span>
+        </form>
+      </div>
+      <div class="container">
+        <div id = "todo-container">
+            <ul class="todos-list">
+            </ul>
+        </div>
       </div>
     </div>
+
   </body>
   <script type="text/javascript" src = "./logic.js"></script>
   <script type="text/javascript" src = "./dom.js"></script>

@@ -71,6 +71,7 @@ var todoFunctions = {
   };
 
 
+
   // Why is this if statement necessary?
   // The answer has something to do with needing to run code both in the browser and in Node.js
   // See this article for more details:
@@ -78,3 +79,4 @@ var todoFunctions = {
   if (typeof module !== 'undefined') {
     module.exports = todoFunctions;
   }
+  

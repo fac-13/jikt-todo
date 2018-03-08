@@ -10,24 +10,65 @@ body{
   font-size: 1.2rem;
   font-family: 'Arial', sans-serif;
 }
+/*box containing submit form*/
+.maincontainer{
+  display:block;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100vh;
+}
+
+.formcontainer{
+  display: flex;
+  /* margin: 50px; */
+  width: 100%;
+  align-self: center;
+  justify-content: space-between;
+}
+
 /* box containing all to do elements */
 .container{
   display:flex;
   flex-direction: column;
   font-size: 1rem;
   border: 1px solid white;
-  width: 80%;
-  height: 80%;
   border-radius: 10px;
-  overflow: scroll;
   padding: 30px;
+  width: 100%;
+  height: 500px;
+  overflow: scroll;
 }
 
 /* input form styling */
 
 .input-form
-.input-form__text
-.input-form__button
+.input-form__text{
+  outline: none;
+  background: rgba(255,255,255,.3);
+  color: white;
+  border: none;
+  padding: 10px;
+  padding-right: 400px;
+  opacity: 30%;
+  font-size: 200%;
+  border-radius: 5px;
+}
+.input-form__button{
+  color: white;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  padding-top: 10px;
+}
+
+#validateSpan {
+  display: block;
+  visibility: hidden;
+  font-size: 0.75rem;
+  margin-top: 2px;
+  margin-left: 2px;
+  
+}
 
 /* ul styling */
 /* ul */
