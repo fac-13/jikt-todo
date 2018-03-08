@@ -14,12 +14,15 @@ body{
 .container{
   display:flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  font-size: 1rem;
   border: 1px solid white;
+  width: 80%;
+  height: 80%;
+  border-radius: 10px;
+  overflow: scroll;
   padding: 30px;
-  width: 50%;
 }
+
 /* input form styling */
 
 .input-form
@@ -27,40 +30,63 @@ body{
 .input-form__button
 
 /* ul styling */
-
-ul,li { list-style-type: none;
-        list-style-position:inside;
-        margin:0;
-        padding:0;
-        display: block;
-        width: 10em;
-      }
-
+/* ul */
+ul, li{
+  padding:0;
+}
 .todos-list{
-  display: block;
-  padding: 0;
+  width: 100%;
+  padding:0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* li */
+.todo-item{
+  box-sizing:border-box;
+  background-color: rgba(78, 39, 147, 0.7);
+  min-height: 30px;
+  min-width: 200px;
+  font-size: 1rem;
+  margin: 5px;
+  border-radius: 5px;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:0 15px;
 }
 
-/* items styling */
-.todo-item{
-  padding: 0;
-  display: block;
-  border: solid 1px white;
+.buttons-container{
+  display: flex;
+  max-width: 20%;
 }
+/* items styling */
+
+/* div inside li that contains p */
 .todo-item__content{
-  border: solid 1px white;
-  min-width: 90%;
+  min-width: 50%;
+  max-width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   display: flex;
   justify-content: space-between;
 }
+/* p inside div */
 .content__p{
  display: block;
- min-width: 80%;
- max-width: 90%;
+ max-width: 80%;
  overflow: wrap;
+ font-size: 1.2rem;
 }
 
-/* BUTTONS */
+/* BUTTONS inside div*/
+button{
+  width: 3em;
+  height: 3em;
+  margin:5px;
+  border-radius: 5px;
+}
 /* markTodo button styling */
 .button__mark{
 
