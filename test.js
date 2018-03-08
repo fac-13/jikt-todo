@@ -37,3 +37,17 @@ test('Testing function markTodo true->false', function(t) {
   t.deepEqual(actual, expected, 'An object with id=idToDelete was removed from array');
   t.end();
 });
+
+test('Testing function sortTodos descending', function(t) {
+  let actual = todoFunctions.sortTodos([{id:1, description: "Feed the cat", done:false}, {id:2, description: "Abide", done: false}],todoFunctions.sortDescending);
+  let expected = [ {id:2, description: "Abide", done: false}, {id:1, description: "Feed the cat", done:false}];
+  t.deepEqual(actual, expected, 'An object with higher id should come first');
+  t.end();
+});
+
+test('Testing function sortTodosAZ', function(t) {
+  let actual = todoFunctions.sortTodos([{id:1, description: "Feed the cat", done:false}, {id:2, description: "Abide", done: false}],todoFunctions.sortDescending);
+  let expected = [ {id:2, description: "Abide", done: false}, {id:1, description: "Feed the cat", done:false}];
+  t.deepEqual(actual, expected, 'Objects should be sorted alphabetically');
+  t.end();
+});
