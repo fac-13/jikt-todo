@@ -5,6 +5,7 @@
     // This is the dom node where we will keep our todo
     var container = document.getElementById('todo-container');
     var addTodoForm = document.getElementById('add-todo');
+    var formText = document.querySelector(".input-form__text")
 
     var state = [
       { id: -3, description: 'first todo', done: false },
@@ -23,6 +24,8 @@
       // add span holding description
       var liContent = document.createElement('div');
       var para = document.createElement('p');
+      
+      
       var text = document.createTextNode(todo.description);
       para.appendChild(text);
       liContent.appendChild(para);
@@ -47,6 +50,9 @@
       var markButtonNode = document.createElement('button');
       markButtonNode.addEventListener('click', function(event) {
         var newState = todoFunctions.markTodo(state, todo.id);
+        
+
+        
         update(newState);
         console.log(newState);
       });
@@ -58,6 +64,10 @@
       para.setAttribute("class", "content__p")
       deleteButtonNode.setAttribute("class", "button__delete")
       markButtonNode.setAttribute("class", "button__mark")
+
+      if(todo.done===true){
+        para.classList.add('done');
+      }
 
       return todoNode;
     };
@@ -81,6 +91,8 @@
           // hint: todoFunctions.addTodo
           var newState = todoFunctions.addTodo(state, itemToAdd); // ?? change this!
           update(newState);
+
+          formText.value="";
         }
       });
     }
