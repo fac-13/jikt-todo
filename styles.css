@@ -173,13 +173,16 @@ button:focus{
 }
 /* markTodo button styling */
 .button__mark{
- background-color: #bada55;
+ border:solid 3px #bada55;
+ background-color: transparent;
 }
 
 /* delete button styling */
 .button__delete{
-  color:#f4429e;
+  /* color:#f4429e; */
+  background-color: transparent;
+  color:white;
   font-weight: bold;
-  background-color:#fff;
+  /* background-color:#fff; */
   padding: 0;
 }
