@@ -1,0 +1,44 @@
+body{
+  margin:0;
+  padding:0;
+  height: 100vh;
+  background-color: #371c68;
+  color: #fff;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  font-family: 'Arial', sans-serif;
+}
+/* box containing all to do elements */
+.container{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid white;
+  padding: 30px;
+  width: 50%;
+}
+/* input form styling */
+
+.input-form
+.input-form__text
+.input-form__button
+
+/* ul styling */
+.todos-list
+
+
+/* items styling */
+.todo-item
+.todo-item__content
+.content__p
+
+/* BUTTONS */
+/* markTodo button styling */
+.button__mark
+
+/* delete button styling */
+
+.button__delete
