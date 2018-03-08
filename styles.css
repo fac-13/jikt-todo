@@ -81,6 +81,7 @@ body{
 }
 .done{
   color: rgba(255,255,255,.3);
+  text-decoration: line-through;
 }
 #validateSpan {
   visibility: hidden;
@@ -139,7 +140,7 @@ ul, li{
  display: block;
  max-width: 80%;
  overflow: wrap;
- font-size: 1.2rem;
+ font-size: 2rem;
 }
 
 /* BUTTONS inside div*/
