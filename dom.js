@@ -18,12 +18,13 @@
       // you will need to use addEventListener
 
       //making wrapping div inside li
-      
+
 
       // add span holding description
       var liContent = document.createElement('div');
       var para = document.createElement('p');
       var text = document.createTextNode(todo.description);
+      var x = document.createTextNode('X')
       para.appendChild(text);
       liContent.appendChild(para);
       todoNode.appendChild(liContent);
@@ -40,6 +41,7 @@
         update(newState);
         console.log(newState);
       });
+      deleteButtonNode.appendChild(x)
       buttonsContainer.appendChild(deleteButtonNode);
 
 

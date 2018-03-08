@@ -67,7 +67,7 @@ body{
   font-size: 0.75rem;
   margin-top: 2px;
   margin-left: 2px;
-  
+
 }
 
 /* ul styling */
@@ -126,13 +126,24 @@ button{
   width: 3em;
   height: 3em;
   margin:5px;
-  border-radius: 5px;
+  border-radius: 50%;
+  outline:none;
+}
+button:hover{
+  box-shadow: 0 0 10px white;
 }
 /* markTodo button styling */
 .button__mark{
-
+ background-color: #bada55;
 }
 
 /* delete button styling */
 
-.button__delete
+.button__delete{
+  color:#f4429e;
+  font-weight: bold;
+  background-color:#fff;
+  padding: 0;
+  display: block;
+  box-sizing: border-box;
+}
