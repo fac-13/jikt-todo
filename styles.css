@@ -10,26 +10,63 @@ body{
   font-size: 1.2rem;
   font-family: 'Arial', sans-serif;
 }
+/*box containing submit form*/
+.maincontainer{
+  display:block;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100vh;
+}
+
+.formcontainer{
+  display: flex;
+  /* margin: 50px; */
+  width: 100%;
+  align-self: center;
+  justify-content: space-between;
+}
+
 /* box containing all to do elements */
 .container{
   display:flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   border: 1px solid white;
   padding: 30px;
-  width: 50%;
+  width: 100%;
+  height: 500px;
+  overflow: scroll;
 }
 /* input form styling */
 
 .input-form
-.input-form__text:required{
+.input-form__text{
   outline: none;
+  background: rgba(255,255,255,.3);
+  color: white;
+  border: none;
+  padding: 10px;
+  padding-right: 400px;
+  opacity: 30%;
+  font-size: 200%;
 }
-.input-form__text:required:invalid{
-  padding-bottom: 20px;
+.input-form__button{
+  color: white;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  padding-top: 10px;
 }
-.input-form__button
+
+#validateSpan {
+  display: block;
+  visibility: hidden;
+  font-size: 0.75rem;
+  margin-top: 2px;
+  margin-left: 2px;
+  
+}
 
 /* ul styling */
 

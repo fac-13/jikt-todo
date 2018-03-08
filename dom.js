@@ -64,14 +64,18 @@
         // what is inside event.target?
         event.preventDefault();
         var description = event.target.description.value; // event.target ....
+        if(!description){
+          document.querySelector("#validateSpan").style.visibility = "visible";
+        }
+        else{
+          var itemToAdd={done: false};
+          document.querySelector("#validateSpan").style.visibility = "hidden";
+          itemToAdd.description = description;
 
-
-        var itemToAdd={done: false};
-        itemToAdd.description = description;
-
-        // hint: todoFunctions.addTodo
-        var newState = todoFunctions.addTodo(state, itemToAdd); // ?? change this!
-        update(newState);
+          // hint: todoFunctions.addTodo
+          var newState = todoFunctions.addTodo(state, itemToAdd); // ?? change this!
+          update(newState);
+        }
       });
     }
 
@@ -94,4 +98,9 @@
     };
 
     if (container) renderState(state);
+
+    var styleInvalid = function(){
+  document.querySelector("#input-form__text").style.property = "background-color: red;"
+}
+
   })();
