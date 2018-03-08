@@ -27,17 +27,44 @@ body{
 .input-form__button
 
 /* ul styling */
-.todos-list
 
+ul,li { list-style-type: none;
+        list-style-position:inside;
+        margin:0;
+        padding:0;
+        display: block;
+        width: 10em;
+      }
+
+.todos-list{
+  display: block;
+  padding: 0;
+}
 
 /* items styling */
-.todo-item
-.todo-item__content
-.content__p
+.todo-item{
+  padding: 0;
+  display: block;
+  border: solid 1px white;
+}
+.todo-item__content{
+  border: solid 1px white;
+  min-width: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+.content__p{
+ display: block;
+ min-width: 80%;
+ max-width: 90%;
+ overflow: wrap;
+}
 
 /* BUTTONS */
 /* markTodo button styling */
-.button__mark
+.button__mark{
+
+}
 
 /* delete button styling */
 
