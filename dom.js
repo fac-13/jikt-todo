@@ -17,6 +17,8 @@
       var todoNode = document.createElement('li');
       // you will need to use addEventListener
 
+      //making wrapping div inside li
+      
 
       // add span holding description
       var liContent = document.createElement('div');
@@ -26,6 +28,10 @@
       liContent.appendChild(para);
       todoNode.appendChild(liContent);
 
+      //this adds container for BUTTONS
+      var buttonsContainer = document.createElement("div");
+      buttonsContainer.setAttribute("class", "buttons-container");
+      todoNode.appendChild(buttonsContainer);
       // this adds the delete button
       var deleteButtonNode = document.createElement('button');
       deleteButtonNode.addEventListener('click', function(event) {
@@ -34,7 +40,7 @@
         update(newState);
         console.log(newState);
       });
-      liContent.appendChild(deleteButtonNode);
+      buttonsContainer.appendChild(deleteButtonNode);
 
 
       // add markTodo button
@@ -44,7 +50,7 @@
         update(newState);
         console.log(newState);
       });
-      liContent.appendChild(markButtonNode);
+      buttonsContainer.appendChild(markButtonNode);
 
       // add classes for css
       todoNode.setAttribute("class", "item")
