@@ -17,7 +17,12 @@
     var createTodoNode = function(todo) {
       var todoNode = document.createElement('li');
       // you will need to use addEventListener
-
+      todoNode.addEventListener('click', function(event) {
+        var newState = todoFunctions.markTodo(state, todo.id);
+        
+        update(newState);
+        console.log(newState);
+      });
       //making wrapping div inside li
       
 
