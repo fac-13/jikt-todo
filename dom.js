@@ -29,6 +29,9 @@
       // add span holding description
       var liContent = document.createElement('div');
       var para = document.createElement('p');
+      para.addEventListener("click", function(){
+        event.stopPropagation();
+      })
 
 
       var text = document.createTextNode(todo.description);
@@ -69,6 +72,7 @@
       todoNode.setAttribute("class", "todo-item")
       liContent.setAttribute("class", "todo-item__content")
       para.setAttribute("class", "content__p")
+      para.setAttribute("contenteditable", "true")
       deleteButtonNode.setAttribute("class", "button__delete")
       markButtonNode.setAttribute("class", "button__mark")
 

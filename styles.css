@@ -146,6 +146,7 @@ ul, li{
  max-width: 80%;
  overflow: wrap;
  font-size: 1.2rem;
+ outline: none;
 }
 
 /* BUTTONS inside div*/
