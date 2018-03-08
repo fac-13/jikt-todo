@@ -5,7 +5,9 @@
     // This is the dom node where we will keep our todo
     var container = document.getElementById('todo-container');
     var addTodoForm = document.getElementById('add-todo');
-    var formText = document.querySelector(".input-form__text")
+    var formText = document.querySelector(".input-form__text");
+    var sortDescend = document.getElementById('button-descend');
+    var sortAZ = document.getElementById('button-az');
 
     var state = [
       { id: -3, description: 'first todo', done: false },
@@ -13,15 +15,24 @@
       { id: -1, description: 'third todo', done: false },
     ]; // this is our initial todoList
 
+    sortDescend.addEventListener("click", function(e){
+      var newState = todoFunctions.sortTodos(state, todoFunctions.sortDescending);
+        update(newState);
+    });
+
+    sortAZ.addEventListener("click", function(e){
+      var newState = todoFunctions.sortTodos(state, todoFunctions.sortAZ);
+        update(newState);
+        console.log(newState);
+    });
+
     // This function takes a todo, it returns the DOM node representing that todo
     var createTodoNode = function(todo) {
       var todoNode = document.createElement('li');
       // you will need to use addEventListener
       todoNode.addEventListener('click', function(event) {
         var newState = todoFunctions.markTodo(state, todo.id);
-
         update(newState);
-        console.log(newState);
       });
       //making wrapping div inside li
 
@@ -48,9 +59,7 @@
       var deleteButtonNode = document.createElement('button');
       deleteButtonNode.addEventListener('click', function(event) {
         var newState = todoFunctions.deleteTodo(state, todo.id);
-        console.log(todo.id);
         update(newState);
-        console.log(newState);
       });
       deleteButtonNode.appendChild(x)
       buttonsContainer.appendChild(deleteButtonNode);
@@ -60,10 +69,9 @@
       var markButtonNode = document.createElement('button');
       markButtonNode.addEventListener('click', function(event) {
         var newState = todoFunctions.markTodo(state, todo.id);
-
-
-
-        update(newState);
+        //marking it twice to fix bubbling
+        var newnewState = todoFunctions.markTodo(newState, todo.id);
+        update(newnewState);
         console.log(newState);
       });
       buttonsContainer.appendChild(markButtonNode);
