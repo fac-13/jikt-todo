@@ -23,7 +23,12 @@ body{
 /* input form styling */
 
 .input-form
-.input-form__text
+.input-form__text:required{
+  outline: none;
+}
+.input-form__text:required:invalid{
+  padding-bottom: 20px;
+}
 .input-form__button
 
 /* ul styling */
