@@ -70,6 +70,11 @@ var todoFunctions = {
       if(item1.description > item2.description) return -1
       return 0;
     },
+    sortZA: function(item1, item2){
+      if(item1.description < item2.description) return -1;
+      if(item1.description > item2.description) return 1
+      return 0;
+    },
     
     sortTodos: function(todos, sortFunction) {
       // stretch goal! Do this last
