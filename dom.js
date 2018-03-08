@@ -35,14 +35,18 @@
         update(newState);
       });
       //making wrapping div inside li
-      
+
 
       // add span holding description
       var liContent = document.createElement('div');
       var para = document.createElement('p');
-      
-      
+      para.addEventListener("click", function(){
+        event.stopPropagation();
+      })
+
+
       var text = document.createTextNode(todo.description);
+      var x = document.createTextNode('X')
       para.appendChild(text);
       liContent.appendChild(para);
       todoNode.appendChild(liContent);
@@ -57,6 +61,7 @@
         var newState = todoFunctions.deleteTodo(state, todo.id);
         update(newState);
       });
+      deleteButtonNode.appendChild(x)
       buttonsContainer.appendChild(deleteButtonNode);
 
 
@@ -64,6 +69,9 @@
       var markButtonNode = document.createElement('button');
       markButtonNode.addEventListener('click', function(event) {
         var newState = todoFunctions.markTodo(state, todo.id);
+
+
+
         update(newState);
       });
       buttonsContainer.appendChild(markButtonNode);
@@ -72,6 +80,7 @@
       todoNode.setAttribute("class", "todo-item")
       liContent.setAttribute("class", "todo-item__content")
       para.setAttribute("class", "content__p")
+      para.setAttribute("contenteditable", "true")
       deleteButtonNode.setAttribute("class", "button__delete")
       markButtonNode.setAttribute("class", "button__mark")
 
@@ -118,7 +127,7 @@
       var todoListNode = document.createElement('ul');
       todoListNode.setAttribute("class", "todos-list")
       state.forEach(function(todo) {
-        todoListNode.appendChild(createTodoNode(todo));
+        todoListNode.insertBefore(createTodoNode(todo), todoListNode.childNodes[0]);
       });
 
       // you may want to add a class for css
@@ -128,7 +137,7 @@
     if (container) renderState(state);
 
     var styleInvalid = function(){
-  document.querySelector("#input-form__text").style.property = "background-color: red;"
+    document.querySelector("#input-form__text").style.property = "background-color: red;"
 }
 
   })();
