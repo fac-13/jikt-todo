@@ -10,11 +10,23 @@
     var sortAZ = document.getElementById('button-az');
     var sortDone = document.getElementById('button-done');
 
-    var state = [
+    var state = JSON.parse(localStorage.getItem('state')) 
+    || 
+    [
       { id: -3, description: 'WATER PLANTS', done: false },
       { id: -2, description: 'BUY CATFOOD', done: false },
       { id: -1, description: 'DO JOB', done: false },
-    ]; // this is our initial todoList
+    ];   
+
+    if(state.length > 0){
+      var localState = todoFunctions.cloneArrayOfObjects(state);
+      var sortedState = todoFunctions.sortTodos(localState, todoFunctions.sortAscending);
+      var lastToDoItem = sortedState[sortedState.length-1];
+      highestId = lastToDoItem.id;
+    }
+    else{
+      highestId = 0;
+    }
 
     var timePressed = false;
     sortDescend.addEventListener("click", function(e){
@@ -117,11 +129,11 @@
           var itemToAdd={done: false};
           document.querySelector("#validateSpan").style.visibility = "hidden";
           itemToAdd.description = description;
-
+          //ensuring new node has highestId+1 as its id key value
+          highestId++;
           // hint: todoFunctions.addTodo
-          var newState = todoFunctions.addTodo(state, itemToAdd); // ?? change this!
+          var newState = todoFunctions.addTodo(state, itemToAdd, highestId); // ?? change this!
           update(newState);
-
           formText.value="";
         }
       });
@@ -130,6 +142,10 @@
     // you should not need to change this function
     var update = function(newState) {
       state = newState;
+      localStorage.setItem('state', JSON.stringify(state));
+      localStorage.setItem('highestId', JSON.stringify(highestId));
+      myState = localStorage.getItem('state');
+      console.log('myState: ', JSON.parse(myState));
       renderState(state);
     };
 
