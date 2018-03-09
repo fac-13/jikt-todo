@@ -64,12 +64,12 @@ var todoFunctions = {
     sortAscending: function(item1, item2){
       return item1.id-item2.id;
     },
-    sortAZ: function(item1, item2){
+    sortZA: function(item1, item2){
       if(item1.description < item2.description) return 1;
       if(item1.description > item2.description) return -1
       return 0;
     },
-    sortZA: function(item1, item2){
+    sortAZ: function(item1, item2){
       if(item1.description < item2.description) return -1;
       if(item1.description > item2.description) return 1
       return 0;

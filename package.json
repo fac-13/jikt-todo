@@ -4,7 +4,7 @@
   "description": "todolist",
   "main": "dom.js",
   "scripts": {
-    "test": "tape test.js | tap-spec"
+    "test": "nyc tape test.js | tap-spec"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/fac-13/jikt-todo#readme",
   "devDependencies": {
+    "nyc": "^11.4.1",
     "tap-spec": "^4.1.1",
     "tape": "^4.9.0"
   }

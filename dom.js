@@ -26,8 +26,8 @@
 
     var AZpressed = false;
     sortAZ.addEventListener("click", function(e){
-      if(!AZpressed){var newState = todoFunctions.sortTodos(state, todoFunctions.sortAZ);};
-      if (AZpressed) {var newState = todoFunctions.sortTodos(state, todoFunctions.sortZA);}
+      if(!AZpressed){var newState = todoFunctions.sortTodos(state, todoFunctions.sortZA);};
+      if (AZpressed) {var newState = todoFunctions.sortTodos(state, todoFunctions.sortAZ);}
       AZpressed = !AZpressed;
         update(newState);
         console.log(newState);
