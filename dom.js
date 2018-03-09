@@ -82,9 +82,6 @@
       // add markTodo button
       var markButtonNode = document.createElement('button');
       markButtonNode.addEventListener('click', function(event) {
-        var newState = todoFunctions.markTodo(state, todo.id);
-        //marking it twice to fix bubbling
-        var newnewState = todoFunctions.markTodo(newState, todo.id);
         update(newnewState);
         console.log(newState);
       });
