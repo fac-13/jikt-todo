@@ -1,29 +1,29 @@
-# Research
-This is where we document our learning.
+# JIKTDev Todo App
 
-Please create a markdown file with your research in named using kebab-case. Place it in the appropriate week-X folder (e.g. week-1) and then link to it from this README file.
+## WHAT
+A To-do app!
 
-Any extra resources you find and think would be useful to your cohort add to the extra resources section with links to appropriate websites or markdown files.
+## WHY
 
-### Week 1
-##### [Regex](https://github.com/fac-13/research/blob/week-1-folder/week-1/RegexResearch.md)
-##### [Command Line](https://github.com/fac-13/research/blob/master/week-1/CL.md)
----
-### Week 2
-##### [DOM manipulation](https://hackmd.io/tiUez2TjSrScUSQye8T1hA)
-##### [Technical Spikes](https://hackmd.io/UaJt9A-RSt66Zgy936GiHg?view)
-##### [Test Coverage](https://github.com/fac-13/research/blob/master/week-2/test-coverage.md)
+To allow the user to 
+- __enter tasks__ they need to do into a web page so that I don't forget them, 
+- __view the tasks__ they have added in a list so that they can plan their day and 
+- __mark tasks__ as complete so that they can focus on the tasks they have left.
 
-### Week 3
+To __also__ allow the user to:
 
-### Week 4
+-   __edit their to-dos__ so that they can amend them if the task changes,
+-   __click on any part of a to-do__ to mark it as complete so that it's easier for them to check to-dos off,
+-   have a __visual indication__ of which to-do they're about to interact with so that it's clear what they are editing.
 
-### Week 5
 
-### Week 6
+## HOW
 
-### Week 7
+### Day 1
+* We discussed our priorities approaching this project, how best we should approach it, and lessons learned from our [previous project](https://github.com/fac-13/JIKTDEVS).
+* Before splitting into groups, we:
+    * worked through our the logic of how our page would function - ensuring we were all clear on all points
+    * 
+* 
 
-### Week 8
-
-## Other Resources
+### Day 2
