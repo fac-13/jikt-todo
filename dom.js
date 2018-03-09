@@ -10,13 +10,13 @@
     var sortAZ = document.getElementById('button-az');
     var sortDone = document.getElementById('button-done');
 
-    var state = JSON.parse(localStorage.getItem('state')) 
-    || 
+    var state = JSON.parse(localStorage.getItem('state'))
+    ||
     [
       { id: -3, description: 'WATER PLANTS', done: false },
       { id: -2, description: 'BUY CATFOOD', done: false },
       { id: -1, description: 'DO JOB', done: false },
-    ];   
+    ];
 
     if(state.length > 0){
       var localState = todoFunctions.cloneArrayOfObjects(state);
@@ -42,13 +42,11 @@
       if (AZpressed) {var newState = todoFunctions.sortTodos(state, todoFunctions.sortAZ);}
       AZpressed = !AZpressed;
         update(newState);
-        console.log(newState);
     });
 
     sortDone.addEventListener("click", function(e){
       var newState = todoFunctions.sortTodos(state, todoFunctions.sortDone);
       update(newState);
-      console.log(newState);
     });
 
 
@@ -94,7 +92,7 @@
       // add markTodo button
       var markButtonNode = document.createElement('button');
       markButtonNode.addEventListener('click', function(event) {
-        
+
       });
       buttonsContainer.appendChild(markButtonNode);
 
@@ -147,7 +145,6 @@
       localStorage.setItem('state', JSON.stringify(state));
       localStorage.setItem('highestId', JSON.stringify(highestId));
       myState = localStorage.getItem('state');
-      console.log('myState: ', JSON.parse(myState));
       renderState(state);
     };
 
