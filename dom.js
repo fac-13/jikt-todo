@@ -38,13 +38,13 @@
 
     var AZpressed = false;
     sortAZ.addEventListener("click", function(e){
-      if(!AZpressed){var newState = todoFunctions.sortTodos(state, todoFunctions.sortAZ);};
-      if (AZpressed) {var newState = todoFunctions.sortTodos(state, todoFunctions.sortZA);}
+      if(!AZpressed){var newState = todoFunctions.sortTodos(state, todoFunctions.sortZA);};
+      if (AZpressed) {var newState = todoFunctions.sortTodos(state, todoFunctions.sortAZ);}
       AZpressed = !AZpressed;
         update(newState);
         console.log(newState);
     });
-    
+
     sortDone.addEventListener("click", function(e){
       var newState = todoFunctions.sortTodos(state, todoFunctions.sortDone);
       update(newState);
@@ -94,8 +94,7 @@
       // add markTodo button
       var markButtonNode = document.createElement('button');
       markButtonNode.addEventListener('click', function(event) {
-        update(newnewState);
-        console.log(newState);
+        
       });
       buttonsContainer.appendChild(markButtonNode);
 
@@ -105,10 +104,13 @@
       para.setAttribute("class", "content__p")
       para.setAttribute("contenteditable", "true")
       deleteButtonNode.setAttribute("class", "button__delete")
+      // markButtonNode.setAttribute("class","")
       markButtonNode.setAttribute("class", "button__mark")
+
 
       if(todo.done===true){
         para.classList.add('done');
+        markButtonNode.classList.add("button_done")
       }
 
       return todoNode;
