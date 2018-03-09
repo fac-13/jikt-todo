@@ -8,23 +8,37 @@
     var formText = document.querySelector(".input-form__text");
     var sortDescend = document.getElementById('button-descend');
     var sortAZ = document.getElementById('button-az');
+    var sortDone = document.getElementById('button-done');
 
     var state = [
-      { id: -3, description: 'first todo', done: false },
-      { id: -2, description: 'second todo', done: false },
-      { id: -1, description: 'third todo', done: false },
+      { id: -3, description: 'WATER PLANTS', done: false },
+      { id: -2, description: 'BUY CATFOOD', done: false },
+      { id: -1, description: 'DO JOB', done: false },
     ]; // this is our initial todoList
 
+    var timePressed = false;
     sortDescend.addEventListener("click", function(e){
-      var newState = todoFunctions.sortTodos(state, todoFunctions.sortDescending);
+      if(!timePressed){var newState = todoFunctions.sortTodos(state, todoFunctions.sortDescending);};
+      if(timePressed){var newState = todoFunctions.sortTodos(state, todoFunctions.sortAscending);};
+      timePressed = !timePressed;
         update(newState);
     });
 
+    var AZpressed = false;
     sortAZ.addEventListener("click", function(e){
-      var newState = todoFunctions.sortTodos(state, todoFunctions.sortAZ);
+      if(!AZpressed){var newState = todoFunctions.sortTodos(state, todoFunctions.sortAZ);};
+      if (AZpressed) {var newState = todoFunctions.sortTodos(state, todoFunctions.sortZA);}
+      AZpressed = !AZpressed;
         update(newState);
         console.log(newState);
     });
+    
+    sortDone.addEventListener("click", function(e){
+      var newState = todoFunctions.sortTodos(state, todoFunctions.sortDone);
+      update(newState);
+      console.log(newState);
+    });
+
 
     // This function takes a todo, it returns the DOM node representing that todo
     var createTodoNode = function(todo) {
