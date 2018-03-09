@@ -23,12 +23,6 @@
       timePressed = !timePressed;
         update(newState);
     });
-    
-    // sortAZ.addEventListener("click", function(e){
-    //   var newState = todoFunctions.sortTodos(state, todoFunctions.sortAZ);
-    //     update(newState);
-    //     console.log(newState);
-    // });
 
     var AZpressed = false;
     sortAZ.addEventListener("click", function(e){
@@ -38,14 +32,7 @@
         update(newState);
         console.log(newState);
     });
-    // sortZtoA.addEventListener("click", function(e){
-    //   sortZtoA.classList.add("buttonAtoZ");
-    //   sortZtoA.classList.remove("buttonZtoA");
-    //   var newState = todoFunctions.sortTodos(state, todoFunctions.sortZA);
-    //     update(newState);
-    //     console.log(newState);
-    // });
-
+    
     sortDone.addEventListener("click", function(e){
       var newState = todoFunctions.sortTodos(state, todoFunctions.sortDone);
       update(newState);
