@@ -21,9 +21,21 @@ To __also__ allow the user to:
 
 ### Day 1
 * We discussed our priorities approaching this project, how best we should approach it, and lessons learned from our [previous project](https://github.com/fac-13/JIKTDEVS).
-* Before splitting into groups, we:
-    * worked through our the logic of how our page would function - ensuring we were all clear on all points
-    * 
+* Before splitting into groups, we decided to try mob programming by:
+    * working through our the logic of how our page would function - ensuring we were all clear on all points
+    * creating tests for all core logic functions
 * 
 
 ### Day 2
+
+* We started styling and soon encountered a big problem: after merging a major pull request, each member was seeing our page rendered differently on their own machines. After much confusion, we resolved the issue by clearing our caches.
+* We split into 2 teams, one working on the form (input box), the other on styling the list of todos:
+    * The form team struggled with validation, trying to re-style chrome's default 'required' validation message. Ultimately, a Javascript solution was opted for.
+    * The list team struggled to overcome unresponsive styling of containers - before finally finding their problems in the clash of their `align-items: center` and a `justify-content` styling. 
+
+### Day 3
+
+* After some very helpful code-review from **[Team PLHH](https://github.com/fac-13/PLHH-ToDo)**, we got to work solving issues: refactoring.
+
+
+### Things we did well
